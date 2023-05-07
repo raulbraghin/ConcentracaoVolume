@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculo de dosagem de produto químico</title>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    
+
+    <h1>Cálculo de dosagem de produto químico</h1>
+
+
+    <div>
+
+        <p>
+        <h3>Selecione o produto que deseja calcular</h3>
+        </p>
+
+        <div>
+
+            <input class="BotaoInicial" type="button" value="PAC" onclick="CalculoPAC()">
+            <input class="BotaoInicial" type="button" value="Hipoclorito" onclick="CalculoHipo()">
+            <input class="BotaoInicial" type="button" value="Flúor" onclick="CalculoFluor()">
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div id="PAC" style="display: none;">
+
+        <input type="radio" name="SelecaoConc" id="ConcPd" onclick="SelecaoConcPAC()">
+        <label for="ConcPd">Concentração Padrão</label>
+
+        <input type="radio" name="SelecaoConc" id="ConcDif" onclick="SelecaoConcPAC()">
+        <label for="ConcDif">Concentração Manual</label>
+
+        <br>
+
+        <p id="ValorConcPadrao"></p>
+
+        <p id="ValorConcManual"></p>
+
+
+    </div>
+
+
+    <div id="Hipo" style="display: none;">
+
+
+    </div>
+
+
+    <div id="Fluor" style="display: none;">
+
+
+    </div>
+
+
+    <footer>
+        <h2>Automação RJOS</h2>
+    </footer>
+
+    <script src="ConVol.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,19 @@
+body {
+    
+    text-align: center;
+    align-items: center;
+    background-image: url("imagens/sabesp\ marca\ dagua.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+input.BotaoInicial {
+    width: 100px;
+    height: 30px;
+}
+
+
+footer {
+    color: blue;
+}
