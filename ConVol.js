@@ -1,4 +1,7 @@
+//conce PAC 10 a 23% Densidade 1,15 a 1,28
+
 //Variáveis Globais
+var ConcPacSelecionada
 
 
 
@@ -18,23 +21,43 @@ function SelecaoConcPAC() {
 
     let SelecaoTipoConcPAC = document.getElementsByName('SelecaoConc')
 
-    let ConcPd = document.querySelector('p#ValorConcPadrao')
-    let ConcMn = document.querySelector('p#ValorConcManual')
-
-    
+    let ConcPd = document.getElementById("ValorConcPadrao")
+    let ConcRl = document.getElementById("ValorConcReal")
 
 
     if (SelecaoTipoConcPAC[0].checked) {
 
-        ConcPd.innerHTML = 'Valor Padrão xxx mg/L'
-        ConcMn.innerHTML = ''
+        ConcPacSelecionada = 12    //12% = 120 g/L
+        
+        ConcPd.innerHTML = `Valor Padrão ${ConcPacSelecionada}%`
+
+        ConcPd.style.display = "block"
+        ConcRl.style.display = "none"
+
     }
-    
+
     if (SelecaoTipoConcPAC[1].checked) {
 
-        ConcPd.innerHTML = ''
-        ConcMn.innerHTML = 'Valor Manual xxx mg/L'
+        ConcRl.style.display = "block"
+        ConcPd.style.display = "none"
+
     }
+
+
+}
+
+function ConcSelecionadaPAC() {
+
+    let SelecaoTipoConcPAC = document.getElementsByName('SelecaoConc')
+
+    if (SelecaoTipoConcPAC[1].checked) {
+
+        let Concentracao = document.querySelector('input#ConcRealPAC')
+        ConcPacSelecionada = Concentracao.value
+
+    }
+
+    console.log(`A concentração selecionada foi ${ConcPacSelecionada}%`)
 
 
 }
