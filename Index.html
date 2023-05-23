@@ -1,3 +1,8 @@
+<!-- A FUNÇÃO DESSE PROGRAMA É CALCULAR O VOLUME DE PRODUTO NECESSÁRIO BASEADO NA CONCENTRAÇÃO
+E NA DENSIDADE DELE
+-->
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -34,18 +39,32 @@
 
     <div id="PAC" style="display: none;">
 
-        <input type="radio" name="SelecaoConc" id="ConcPd" onclick="SelecaoConcPAC()">
-        <label for="ConcPd">Concentração Padrão</label>
+        <div>
 
-        <input type="radio" name="SelecaoConc" id="ConcDif" onclick="SelecaoConcPAC()">
-        <label for="ConcDif">Concentração Manual</label>
+            <input type="radio" name="SelecaoConc" id="ConcPd" onclick="SelecaoConcPAC()">
+            <label for="ConcPd">Concentração Padrão</label>
 
-        <br>
+            <input type="radio" name="SelecaoConc" id="ConcDif" onclick="SelecaoConcPAC()">
+            <label for="ConcDif">Concentração Real</label>
 
-        <p id="ValorConcPadrao"></p>
+            <br>
 
-        <p id="ValorConcManual"></p>
+            <!-- AQUI VAI APARECER A CONCENTRAÇAO SELECIONADA -->
+            <p id="ValorConcPadrao" style="display: none;"></p>
 
+
+            <p id="ValorConcReal" style="display: none;">
+
+                Digite a concentração Real do PAC
+                <input type="number" name="ConcRealPAC" id="ConcRealPAC"> 
+
+            </p>
+
+            <br>
+
+            <input type="button" value="Gravar" onclick="ConcSelecionadaPAC()">
+
+        </div>
 
     </div>
 
