@@ -61,3 +61,29 @@ function ConcSelecionadaPAC() {
 
 
 }
+
+function Preenchimento(Valor, valorMaximo, ValorMinimo) {
+
+if (Valor.value < ValorMinimo && Valor.value != '') {
+
+    alert(`Valor menor que o ${ValorMinimo}`)
+    return false;
+
+}else if (Valor.value > valorMaximo && Valor.value != '') {
+
+    alert(`Valor maior que o ${valorMaximo}`)
+    return false;
+
+}else if (Valor.value == '') {
+
+    alert('Preencher Campo')
+    return false;
+
+}else{
+
+    return true
+
+}
+
+
+}
