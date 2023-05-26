@@ -28,7 +28,7 @@ function SelecaoConcPAC() {
     if (SelecaoTipoConcPAC[0].checked) {
 
         ConcPacSelecionada = 12    //12% = 120 g/L
-        
+
         ConcPd.innerHTML = `Valor Padrão ${ConcPacSelecionada}%`
 
         ConcPd.style.display = "block"
@@ -53,7 +53,18 @@ function ConcSelecionadaPAC() {
     if (SelecaoTipoConcPAC[1].checked) {
 
         let Concentracao = document.querySelector('input#ConcRealPAC')
-        ConcPacSelecionada = Concentracao.value
+
+        let VerificaCampo = Preenchimento(Concentracao.value, 30, 8)
+
+        console.log(VerificaCampo)
+
+        if (VerificaCampo == true) {
+
+            ConcPacSelecionada = Concentracao.value
+
+        }
+
+
 
     }
 
@@ -64,26 +75,26 @@ function ConcSelecionadaPAC() {
 
 function Preenchimento(Valor, valorMaximo, ValorMinimo) {
 
-if (Valor.value < ValorMinimo && Valor.value != '') {
+    if (Valor < ValorMinimo && Valor != '') {
 
-    alert(`Valor menor que o ${ValorMinimo}`)
-    return false;
+        alert(`Valor menor que o ${ValorMinimo}`)
+        return false;
 
-}else if (Valor.value > valorMaximo && Valor.value != '') {
+    } else if (Valor > valorMaximo && Valor != '') {
 
-    alert(`Valor maior que o ${valorMaximo}`)
-    return false;
+        alert(`Valor maior que o ${valorMaximo}`)
+        return false;
 
-}else if (Valor.value == '') {
+    } else if (Valor == '') {
 
-    alert('Preencher Campo')
-    return false;
+        alert('Preencher Campo')
+        return false;
 
-}else{
+    } else {
 
-    return true
+        return true
 
-}
+    }
 
 
 }
