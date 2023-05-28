@@ -8,6 +8,10 @@ body {
     background-position: center;
 }
 
+body {
+    text-align: center;
+}
+
 input.BotaoInicial {
     width: 100px;
     height: 30px;
@@ -18,6 +22,27 @@ input[type="number"] {
     background-color: lightblue;
     width: 100px;
 }
+
+
+table.TableDosPac {
+    width: 400px;
+    border-collapse: collapse;
+    background-color: #19e6ff;
+    align-items: center;
+    margin: auto;
+    /* Tabela alinha no meio */
+}
+
+table.TableDosPac th{
+    border: 1px solid black;
+
+}
+
+tr#Linhas {
+    border: 1px solid black;
+    background-color: rgba(95, 252, 74, 0.575);
+}
+
 
 footer {
     color: blue;

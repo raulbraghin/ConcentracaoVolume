@@ -23,7 +23,7 @@ E NA DENSIDADE DELE
 
         <p>
         <h3>Selecione o produto que deseja calcular</h3>
-        </p> 
+        </p>
 
         <div>
 
@@ -56,7 +56,7 @@ E NA DENSIDADE DELE
             <p id="ValorConcReal" style="display: none;">
 
                 Digite a concentração Real do PAC
-                <input type="number" name="ConcRealPAC" id="ConcRealPAC"> 
+                <input type="number" name="ConcRealPAC" id="ConcRealPAC">
 
             </p>
 
@@ -68,25 +68,107 @@ E NA DENSIDADE DELE
 
         <div id="DadosProcesso" style="display: none;">
 
-            <input type="number" name="ConcDesejadaPRocesso" id="ConcDesejadaPRocesso">
-            
-            <br>
-
-            <input type="number" name="VazaoProcesso" id="VazaoProcesso">
 
 
+            <p>
+                Vazão da ETA:
+                <input type="number" name="VazaoProcesso" id="VazaoProcesso">
+            </p>
 
+
+            <p>
+                Concentração desejada de PAC:
+                <input type="number" name="ConcDesejadaProcesso" id="ConcDesejadaProcesso">
+            </p>
+
+            <p>
+                Densidade do PAC:
+                <input type="number" name="DensidadePAC" id="DensidadePAC">
+            </p>
+
+
+
+
+
+            <input type="button" value="Gravar" onclick="CalcularVolumePAC()">
+
+        </div>
+
+        <div id="ResultadoPAC" style="display: none;">
+
+            <p>
+            <h2>Resultados de Dosagem de PAC</h2>
+        </p>
+
+
+            <table class="TableDosagemPac">
+
+                <thead>
+
+                    <tr>
+                        <th colspan="3">Tabela de Dados</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <th>Dados</th>
+                        <th>Valores</th>
+                        <th>UE</th>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Vazão</td>
+                        <td id="rVazaoPAC"></td>
+                        <td>L/s</td>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Concentração PAC</td>
+                        <td id="rConcPAC"></td>
+                        <td>%</td>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Densidade PAC</td>
+                        <td id="rDensPAC"></td>
+                        <td>kg/m³</td>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Concentração Processo</td>
+                        <td id="rConcDosada"></td>
+                        <td>mg/L</td>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Dosagem PAC</td>
+                        <td id="rDosagemFinal"></td>
+                        <td>ml/min</td>
+                    </tr>
+
+                </tbody>
+
+
+
+
+            </table>
 
         </div>
 
     </div>
 
 
+    <!-- HIPO -->
+
     <div id="Hipo" style="display: none;">
 
 
     </div>
 
+
+    <!-- FLUOR -->
 
     <div id="Fluor" style="display: none;">
 
