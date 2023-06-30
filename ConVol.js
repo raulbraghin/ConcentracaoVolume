@@ -85,8 +85,8 @@ function ConcSelecionadaPAC() {
 
 function CalcularVolumePAC() {
 
-    let Vazao = document.querySelector('input#ConcDesejadaProcesso')
-    let ConcDesejada = document.querySelector('input#VazaoProcesso')
+    let Vazao = document.querySelector('input#VazaoProcesso')
+    let ConcDesejada = document.querySelector('input#ConcDesejadaProcesso')
     let DensPAC = document.querySelector('input#DensidadePAC')
 
     let mostra = document.getElementById("ResultadoPAC")
@@ -107,12 +107,37 @@ function CalcularVolumePAC() {
 
     }
 
-    ResultadoPAC(gVazaoPAC,gConcentracaoPAC,gConcPacSelecionada)
+    ResultadoPAC(gVazaoPAC, gConcPacSelecionada, gConcentracaoPAC, gDensidadePAC)
 
 }
 
-function ResultadoPAC(VazPAC, ConPAC, ConcPadPAC) {
+function ResultadoPAC(VazPAC, ConcPadPAC, ConPAC, DensPAC) {
 
+    let VazaoETA        = document.querySelector("td#rVazaoPAC")
+    let ConcPACETA      = document.querySelector("td#rConcPAC")
+    let ConcDosETA      = document.querySelector("td#rConcDosada")
+    let DensPACETA      = document.querySelector("td#rDensPAC")
+    let DosFinalETAM    = document.querySelector("td#rDosagemFinalM3")
+    let DosFinalETAL    = document.querySelector("td#rDosagemFinalL")
+
+    VazaoETA.innerHTML = VazPAC
+    ConcPACETA.innerHTML = ConcPadPAC
+    ConcDosETA.innerHTML = ConPAC
+    DensPACETA.innerHTML = DensPAC
+
+    //CONVERSÕES DE UNIDADES
+    let Vazaom3         = VazPAC * 3600 / 1000      //Vazão de L/s para m3/h
+    let ConcDesejadakg  = ConPAC * 1000             //Concentração de mg/L para kg/m3
+
+    //Calculo
+    let ConcRealPAC     = DensPAC * ConcPadPAC / 1000
+    let DosPacDesejada  = Vazaom3 * ConcDesejadakg
+
+    let DosFinalPacm3   = ConcRealPAC / DosPacDesejada      //Dosagem em M3/h
+    let DosFinalPacL    = DosFinalPacm3 * 1000 / 3600       //Dosagem em L/s
+
+    DosFinalETAM.innerHTML = DosFinalPacm3.toFixed(3)
+    DosFinalETAL.innerHTML = DosFinalPacL.toFixed(3)
 
 
 }

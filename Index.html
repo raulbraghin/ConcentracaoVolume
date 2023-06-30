@@ -71,28 +71,25 @@ E NA DENSIDADE DELE
 
 
             <p>
-                Vazão da ETA:
+                Vazão da ETA (L/s):
                 <input type="number" name="VazaoProcesso" id="VazaoProcesso">
             </p>
 
 
             <p>
-                Concentração desejada de PAC:
+                Concentração desejada de PAC (mg/L):
                 <input type="number" name="ConcDesejadaProcesso" id="ConcDesejadaProcesso">
             </p>
 
             <p>
-                Densidade do PAC:
+                Densidade do PAC (Kg/m³):
                 <input type="number" name="DensidadePAC" id="DensidadePAC">
             </p>
-
-
-
-
 
             <input type="button" value="Gravar" onclick="CalcularVolumePAC()">
 
         </div>
+
 
         <div id="ResultadoPAC" style="display: none;">
 
@@ -144,8 +141,14 @@ E NA DENSIDADE DELE
 
                     <tr id="Linhas">
                         <td>Dosagem PAC</td>
-                        <td id="rDosagemFinal"></td>
-                        <td>ml/min</td>
+                        <td id="rDosagemFinalM3"></td>
+                        <td>m³/h</td>
+                    </tr>
+
+                    <tr id="Linhas">
+                        <td>Dosagem PAC</td>
+                        <td id="rDosagemFinalL"></td>
+                        <td>L/s</td>
                     </tr>
 
                 </tbody>
